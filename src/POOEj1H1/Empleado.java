@@ -8,7 +8,7 @@ package POOEj1H1;
  *
  * @author danielsotoortiz
  */
-public class Empleado {
+class Empleado {
     
     private String dni;
     private String nombre;
