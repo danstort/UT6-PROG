@@ -12,7 +12,13 @@ public class Main {
 
    
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+      Empleado e1 = new Empleado();
+        System.out.println("Número empleados:"+Empleado.numEmpleados);
+        
+        Empleado e2 = new Empleado();
+        Empleado e3 = new Empleado();
+        System.out.println("Número empleados:"+Empleado.numEmpleados);
     }
     
 }
