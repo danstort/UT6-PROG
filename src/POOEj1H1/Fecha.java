@@ -8,7 +8,7 @@ package POOEj1H1;
  *
  * @author danielsotoortiz
  */
-public class Fecha {
+class Fecha {
 
     private int dia;
     private int mes;
@@ -49,7 +49,7 @@ public class Fecha {
 
     public boolean fechaCorrecta() {
 
-        boolean fc;
+        boolean fc = false;
 
         switch (this.mes) {
             case 1:
@@ -59,7 +59,7 @@ public class Fecha {
             case 8:
             case 10:
             case 12:
-                if (0 > dia & dia < 32) {
+                if (0 > dia | dia < 32) {
                     fc = true;
 
                 } else {
@@ -73,7 +73,7 @@ public class Fecha {
             case 6:
             case 9:
             case 11:
-                if (0 > dia & dia < 31) {
+                if (0 > dia | dia < 31) {
                     fc = true;
 
                 } else {
@@ -83,7 +83,7 @@ public class Fecha {
 
                 break;
             case 2:
-                if (0 > dia & dia < 29) {
+                if (0 > dia | dia < 29) {
                     fc = true;
 
                 } else {
@@ -96,23 +96,23 @@ public class Fecha {
 
         return fc;
     }
-    
-    public void diaSiguiente(){
-    switch (this.mes) {
+
+    public void diaSiguiente() {
+        switch (this.mes) {
             case 1:
             case 3:
             case 5:
             case 7:
             case 8:
             case 10:
-            case 12:
-                if (0 > dia & dia < 31) {
-                  dia++;
+
+                if (0 > dia || dia < 31) {
+                    dia++;
 
                 } else {
-                    dia=1;
+                    dia = 1;
                     mes++;
-                   
+
                 }
 
                 break;
@@ -121,31 +121,44 @@ public class Fecha {
             case 6:
             case 9:
             case 11:
-                if (0 > dia & dia < 3) {
-                   dia++;
+                if (dia > 0 | dia < 3) {
+                    dia++;
 
                 } else {
 
-                  dia=1;
-                  mes++;
+                    dia = 1;
+                    mes++;
                 }
 
                 break;
             case 2:
-                if (0 > dia & dia < 28) {
+                if (0 > dia | dia < 28) {
                     dia++;
                 } else {
 
-                    dia=1;
-                    mes++;        
+                    dia = 1;
+                    mes++;
                 }
 
                 break;
+            case 12:
+                if (0 > dia | dia < 31) {
+                    dia++;
+
+                } else {
+                    dia = 1;
+                    mes=1;
+                    anno++;
+
+                }
         }
+        
+        
     }
 
-
-    
-    
+    @Override
+    public String toString() {
+        return dia + " de " + mes + " de " + anno;
+    }
 
 }
