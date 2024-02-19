@@ -17,7 +17,7 @@ public class CuentaCorriente {
 
     void ingresoccc(double importe) {
 
-        this.saldo = this.saldo + importe + (tipoInteres * saldo);
+        this.saldo = (this.saldo + importe)*(tipoInteres/100+1);
 
     }
 
@@ -31,9 +31,75 @@ public class CuentaCorriente {
         }
     }
 
-// void transferenciaCCC(double cantidad, CuentaCorriente c1)
-//
-//Incluye en la clase un constructor por defecto, un constructor con todos los  parámetros, y con tres parametros (numero de cuenta, tipo de interés y saldo) , y los métodos getters y setters. También añade método constructor que permita hacer una copia de los datos de la CuentaCorriente. (Constructor copia)
-//    
+    void transferenciaCCC(double cantidad, CuentaCorriente c1) {
 
+        c1.ingresoccc(cantidad);
+        this.saldo=this.saldo-cantidad;
+
+    }
+
+    public CuentaCorriente() {
+    }
+
+    public CuentaCorriente(String nombre, String numeroCuenta, double tipoInteres, double saldo) {
+        this.nombre = nombre;
+        this.numeroCuenta = numeroCuenta;
+        this.tipoInteres = tipoInteres;
+        this.saldo = saldo;
+    }
+
+    public CuentaCorriente(String numeroCuenta, double tipoInteres, double saldo) {
+        this.numeroCuenta = numeroCuenta;
+        this.tipoInteres = tipoInteres;
+        this.saldo = saldo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public double getTipoInteres() {
+        return tipoInteres;
+    }
+
+    public void setTipoInteres(double tipoInteres) {
+        this.tipoInteres = tipoInteres;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public CuentaCorriente(CuentaCorriente cn) {
+
+        cn.nombre = this.nombre;
+        cn.numeroCuenta = this.numeroCuenta;
+        cn.saldo = this.saldo;
+        cn.tipoInteres = this.tipoInteres;
+    }
+
+    @Override
+    public String toString() {
+        return numeroCuenta + " " + saldo;
+    }
+
+    
+    
+    
 }
