@@ -7,10 +7,7 @@ package POOEj1H3;
 import POOEj1H2.*;
 import java.util.Scanner;
 
-/**
- *
- * @author danielsotoortiz
- */
+
 public class ContarMain {
 
     
@@ -29,15 +26,18 @@ public class ContarMain {
         
         System.out.println("suma: "+c2.suma(c1));
         
+        Contar c3 =(Contar)c1.Clone();
         
-        if (c1.equals(c2)){
+        if (c1.equals(c3)){
         
-            System.out.println("c1 y c2 son iguales");
+            System.out.println("c1 y c3 son iguales");
         } else {
         
-            System.out.println("c1 y c2 no son iguales");
+            System.out.println("c1 y c3 no son iguales");
             
         }
+        
+       
     }
     
 }

@@ -7,8 +7,8 @@ package POOEj1H3;
 import POOEj1H2.*;
 import POOEj1H1.*;
 
-class Contar {
-    
+class Contar implements Cloneable{
+
     private int contador;
 
     public Contar() {
@@ -18,19 +18,19 @@ class Contar {
         this.contador = contador;
     }
 
-    void incrementar(int incremento){
-        
-        this.contador=this.contador+incremento;
+    void incrementar(int incremento) {
+
+        this.contador = this.contador + incremento;
     }
-    
-    void decrementar (int decremento){
-    
-        this.contador=this.contador-decremento;
+
+    void decrementar(int decremento) {
+
+        this.contador = this.contador - decremento;
     }
-    
-    int suma (Contar cont1){
-    
-        int s=this.contador+cont1.contador;
+
+    int suma(Contar cont1) {
+
+        int s = this.contador + cont1.contador;
         return s;
     }
 
@@ -67,7 +67,22 @@ class Contar {
         final Contar other = (Contar) obj;
         return this.contador == other.contador;
     }
-    
-    
-    
+
+    public Object Clone() {
+
+        Object objeto = null;
+
+        try {
+
+            objeto = super.clone();
+
+        } catch (CloneNotSupportedException ex) {
+
+            System.out.println("Error al duplicar");
+
+        }
+
+        return objeto;
+    }
+
 }
