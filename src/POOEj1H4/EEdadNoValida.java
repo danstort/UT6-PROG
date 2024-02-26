@@ -5,7 +5,7 @@
 package POOEj1H4;
 
 
-public class EEdadNoValida extends Exception{
+class EEdadNoValida extends Exception{
     
     public EEdadNoValida (){}
 

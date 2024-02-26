@@ -8,35 +8,24 @@ package POOEj1H4;
  *
  * @author danielsotoortiz
  */
-public class Programador {
+class Programador extends Empleado{
 
-    String nombre;
-    int edad;
-    boolean casado;
-    double salario = 1000;
+    
     int lineasDeCodigoPorHora;
     String lenguajeDominante;
 
     public Programador() {
     }
 
-    public Programador(String nombre, int edad, boolean casado, double salario, int lineasDeCodigoPorHora, String lenguajeDominante) throws EEdadNoValida{
-
-        this.nombre = nombre;
-        this.edad = edad;
-        this.casado = casado;
-        this.salario = salario;
+    public Programador(int lineasDeCodigoPorHora, String nombre, int edad, boolean casado) throws EEdadNoValida {
+        super(nombre, edad, casado);
         this.lineasDeCodigoPorHora = lineasDeCodigoPorHora;
-        this.lenguajeDominante = lenguajeDominante;
-
-        if (edad < 18 | edad > 65) {
-
-            throw new EEdadNoValida("Edad incorrecta");
-        }
-
+        
     }
 
-    public double calcularSalario(int horasExtra) {
+    
+    
+     public double calcularSalario(int horasExtra) {
 
         double r = 0;
         if (lineasDeCodigoPorHora > 1500) {
@@ -52,4 +41,60 @@ public class Programador {
         return r;
 
     }
+
+    public int getLineasDeCodigoPorHora() {
+        return lineasDeCodigoPorHora;
+    }
+
+    public void setLineasDeCodigoPorHora(int lineasDeCodigoPorHora) {
+        this.lineasDeCodigoPorHora = lineasDeCodigoPorHora;
+    }
+
+    public String getLenguajeDominante() {
+        return lenguajeDominante;
+    }
+
+    public void setLenguajeDominante(String lenguajeDominante) {
+        this.lenguajeDominante = lenguajeDominante;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public boolean isCasado() {
+        return casado;
+    }
+
+    public void setCasado(boolean casado) {
+        this.casado = casado;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Programador{" + "lineasDeCodigoPorHora=" + lineasDeCodigoPorHora + ", lenguajeDominante=" + lenguajeDominante + '}';
+    }
+     
+    
+     
 }
