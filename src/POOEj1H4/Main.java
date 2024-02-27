@@ -29,7 +29,7 @@ public class Main {
             d = false;
 
         }
-        nIngles e = null;
+        nIngles e= nIngles.Alto;
         
         
         if (a == 'a') {
