@@ -29,14 +29,12 @@ public class Main {
             d = false;
 
         }
-        nIngles e= nIngles.Alto;
-        
-        
+        nIngles e = nIngles.Alto;
+
         if (a == 'a') {
             System.out.println("Introduzca nivel de inglés. Alto: a. Medio: m. Bajo: b");
 
             char ee = tec.nextLine().charAt(0);
-            
 
             if (ee == 'a') {
 
@@ -62,16 +60,29 @@ public class Main {
 
         switch (a) {
             case 'a':
-
+                
+                try {
+                    
                 Administrativo a1 = new Administrativo(e, b, ed, d);
+                
+            } catch (EEdadNoValida ex) {
+                    System.out.println("No se puede dar de alta. Edad inferior a 18 años");
+            }
 
-                break;
+            break;
 
             case 'p':
 
+                try {
+                    
                 Programador p1 = new Programador(lincod, b, ed, d);
-
+                
+            } catch (EEdadNoValida ex) {
+                    System.out.println("No se puede dar de alta. Edad inferior a 18 años");
+            }
+                
                 break;
+
 
             default:
                 System.out.println("Introduzca un valor válido");
