@@ -14,7 +14,7 @@ public class Sim {
         bloqueada, activa, apagada
     }
 //creo el obejeto estado de la clase Estado
-    Estado estado;
+    Estado estado = Estado.apagada;
 
     public Sim() {
     }
@@ -40,7 +40,11 @@ public class Sim {
         this.puk = puk;
     }
 
-    int numIntentos = 0;
+    public Estado getEstado() {
+        return estado;
+    }
+
+    int numIntentos = 1;
     //creamos metodo booleano encender.
 
     public boolean encender(String pin) {
@@ -48,16 +52,18 @@ public class Sim {
 //valor del condicional.    
         boolean r = false;
 
-        if (this.pin == pin && estado == estado.apagada) {
-            estado = estado.activa;
-            numIntentos = 0;
-            r = true;
+        if (numIntentos < 3) {
+            if (this.pin == pin && estado == Estado.apagada) {
+                estado = Estado.activa;
+                this.numIntentos = 0;
+                r = true;
 
-        } else if (this.pin != pin && estado == estado.apagada) {
-            numIntentos = numIntentos++;
+            } else {
+                numIntentos++;
 
+            }
         } else if (numIntentos == 3) {
-            estado = estado.bloqueada;
+            estado = Estado.bloqueada;
         }
 
         return r;
@@ -78,4 +84,9 @@ public class Sim {
             estado = estado.apagada;
         }
     }
+
+    public int getNumIntentos() {
+        return numIntentos;
+    }
+
 }
