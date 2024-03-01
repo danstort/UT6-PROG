@@ -4,7 +4,7 @@
  */
 package POOEj1H5;
 
-public class Sim {
+class Sim {
 
     private String pin;
     private String puk;
@@ -53,7 +53,7 @@ public class Sim {
         boolean r = false;
 
         if (numIntentos < 3) {
-            if (this.pin == pin && estado == Estado.apagada) {
+            if (this.pin.equals(pin) && estado == Estado.apagada) {
                 estado = Estado.activa;
                 this.numIntentos = 0;
                 r = true;
@@ -73,15 +73,16 @@ public class Sim {
     public boolean desbloquear(String puk) {
         boolean desbloquear = false;
 
-        if (this.puk == puk && this.estado == estado.bloqueada) {
-            this.estado = estado.activa;
+        if (this.puk.equals(puk) && this.estado == Estado.bloqueada) {
+            this.estado = Estado.activa;
+            desbloquear=true;
         }
         return desbloquear;
     }
 
     public void apagar() {
-        if (this.estado == estado.activa) {
-            estado = estado.apagada;
+        if (this.estado == Estado.activa) {
+            estado = Estado.apagada;
         }
     }
 

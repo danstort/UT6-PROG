@@ -14,12 +14,12 @@ public class TestSIM {
         Sim sim1 = new Sim(tec.nextLine(), tec.nextLine());
 
         System.out.println(sim1.encender(tec.nextLine()));
-        System.out.println(sim1.getNumIntentos());
+        
 
         System.out.println(sim1.encender(tec.nextLine()));
-        System.out.println(sim1.getNumIntentos());
+        
         System.out.println(sim1.encender(tec.nextLine()));
-        System.out.println(sim1.getNumIntentos());
+        
         System.out.println("Estado de la SIM:" + sim1.getEstado());
 
         if (sim1.encender(tec.nextLine())) {
@@ -37,6 +37,8 @@ public class TestSIM {
 
         System.out.println("Estado de la SIM:" + sim1.getEstado());
 
+        System.out.println("aquiu");
+        
         sim1.desbloquear(tec.nextLine());
 
         System.out.println("Estado de la SIM:" + sim1.getEstado());
