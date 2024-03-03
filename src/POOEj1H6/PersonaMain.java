@@ -3,6 +3,8 @@ package POOEj1H6;
 
 import java.util.Scanner;
 
+import java.lang.Integer;
+
 public class PersonaMain {
 
     
@@ -11,7 +13,7 @@ public class PersonaMain {
         Scanner tec = new Scanner(System.in);
 
         Persona p1 = new Persona(3);
-        int a = Integer.paseInt(p1.lee());
+        int a = Integer.parseInt(p1.lee());
     }
 
 }
